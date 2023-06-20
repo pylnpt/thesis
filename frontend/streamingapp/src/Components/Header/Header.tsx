@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import axios from 'axios';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Avatar from '@mui/material/Avatar';
@@ -8,12 +9,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-
-// import '../Modal/Modal.tsx' 
 import './Header.scss'
 
-
 const Header  = () => {
+  axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     const style = {
         position: 'absolute' as 'absolute',
         top: '50%',
